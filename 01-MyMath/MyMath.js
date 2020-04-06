@@ -11,34 +11,57 @@ export class MyMath {
      * 
      * @param value Unser Initialwert für den Wert von unserer MyMath Instanz.
      */
+
     constructor(value) {
         // 'this' referenziert den Kontext in dem die aktuelle Funktion aufgerufen wird. 
         // Hier referenziert es die Instanz der Klasse MyMath die wir gerade erstellen.
         // mit 'value * 1' erzwingen wir, dass value als number gelesen wird.
-        this.value = value * 1; 
+        if (value == null){
+            this.value = 0; 
+        } else {
+            this.value = value * 1;
+        }
     }
 
     add(value) {
-
+        this.value+=value; 
+        return this; 
     }
 
     subtract(value) {
-
+        this.value-=value; 
     }
 
     multiply(value) {
+        this.value*=value; 
 
     }
 
     divide(value) {
-
+        if (value == 0){
+        this.value; 
+        } else {
+        this.value/=value; 
+        }
     }
 
     pow(value) {
 
+        if (value >= 0 ){
+            this.value ** value; 
+        } else {
+            this.value;
+        }
+
     }
 
     faculty() {
-
+        if (this.value  % 1 === 0){
+            for ( i = this.value ; i>0; i--){
+                this.value*=(i-1);
+            } 
+        } else {
+            n;
+        }
     }
 }
