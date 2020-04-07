@@ -23,7 +23,8 @@ export class Calculator {
     }
 
     onButtonClick(symbol) {
-        console.log()
+        this.printSolution(symbol);
+        console.log(symbol);
     }
 
     print(string) {
