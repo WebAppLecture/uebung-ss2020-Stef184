@@ -3,16 +3,16 @@ import {MyMath} from "../01-MyMath/MyMath.js";
 export class Calculator {
 
     constructor(numpad, outputCalculation, outputSolution) {
-    }
-    window.calc = new Calculator();
+    
             this.numPad = numPad;
             this.outputCalc = outputCalc;
             this.outputSolution = outputSolution;
             this.setupNumpad()
 
+    }
+
     setupNumPad() { 
-        for(int element : this.numPad.children){
-            element.addEventListener('click', this.onButtonClick.bind(this));
+        this.numPad.children.forEach(element => element.addEventListener('click', this.onButtonClick.bind(this).bind(this, element.innerText)));
         }
 
       /* for (int i = 0; i>=9; i++){
@@ -23,8 +23,8 @@ export class Calculator {
     }
 
     onButtonClick(symbol) {
-        this.printSolution(symbol);
-        console.log(symbol);
+      // this.printSolution(symbol);
+       console.log(symbol);
     }
 
     print(string) {
