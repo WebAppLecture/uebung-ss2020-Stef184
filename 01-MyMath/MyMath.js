@@ -21,20 +21,22 @@ export class MyMath {
         } else {
             this.value = value * 1;
         }
+        // alternativ kürzeste Lösung: this.value = (value * 1) || 0;
     }
 
     add(value) {
         this.value+=value; 
-        return this; 
+        return this; //Chaining
     }
 
     subtract(value) {
         this.value-=value; 
+        return this; // Chaining
     }
 
     multiply(value) {
         this.value*=value; 
-
+        return this;
     }
 
     divide(value) {
@@ -61,7 +63,7 @@ export class MyMath {
                 this.value*=(i-1);
             } 
         } else {
-            n;
+            this.value;
         }
     }
 }
